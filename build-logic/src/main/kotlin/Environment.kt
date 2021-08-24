@@ -14,6 +14,10 @@ enum class SupportedAgp(
     AGP_7_0("7.0.1", gradle = "7.0.2"),
     AGP_7_1("7.1.0-alpha08", gradle = "7.1");
 
+    companion object {
+        val oldest = values().first()
+    }
+
     val shortVersion: String = run {
         // Extract first two components of the Maven dependency's version string.
         val components = version.split('.')
